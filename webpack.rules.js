@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const path = require('path');
 
 const rules = [
@@ -28,10 +26,7 @@ const rules = [
       }
     }
   },
-];
-
-if (process.env.NODE_ENV === 'production') {
-  rules.push({
+  {
     test: /\.(tsx?|jsx?)$/i,
     exclude: /(node_modules|\.webpack)/,
     include: path.resolve(__dirname, 'src'),
@@ -79,7 +74,7 @@ if (process.env.NODE_ENV === 'production') {
         },
       },
     ],
-  });
-}
+  }
+];
 
 module.exports = rules;
