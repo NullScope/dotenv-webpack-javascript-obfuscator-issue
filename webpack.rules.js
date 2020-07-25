@@ -30,6 +30,16 @@ const rules = [
     test: /\.(tsx?|jsx?)$/i,
     exclude: /(node_modules|\.webpack)/,
     include: path.resolve(__dirname, 'src'),
+    use: [
+      {
+        loader: path.resolve('./loaders/dotenv.js'),
+      }
+    ],
+  },
+  {
+    test: /\.(tsx?|jsx?)$/i,
+    exclude: /(node_modules|\.webpack)/,
+    include: path.resolve(__dirname, 'src'),
     enforce: 'post',
     use: [
       {
